@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>DETAILS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="l-container" *ngFor="let c of booking;">
+    <div class="b-game-card">
+      <div class="b-game-card__cover" >
+       <img [src]="c.image" width="100%">
+       <h4 class="card-title"> {{c.itemname}}</h4>
+       <p class="card-text">Price: ₹{{c.amount}}</p> 
+       <p class="card-text">Quantity: {{c.quantity}}</p> 
+      </div>
+    </div>
+ 
+  </div>
+
+  <!-- Nav -->
+
+
+
+<!-- Main -->
+<!-- <div class="container"  *ngFor="let c of booking;">
+  <div class="row">
+    <div class="col">
+      <div class="card" style="width: 20rem;">
+<img class="card-img-top" img [src]="c.image" alt="Card image cap">
+<div class="card-block">
+  <h4 class="card-title">{{c.itemname}}</h4>
+  <p class="card-text">Price: ₹{{c.amount}}</p>
+  <p class="card-text">Quantity: {{c.quantity}}</p>
+
+</div>
+</div>
+    </div>
+  
+  </div>
+</div> -->
+
+
+
+
+
+  <!-- <div class="shopping-cart">
+
+    <ion-item *ngFor="let c of booking;">
+      <div>
+        <br>
+        <div class="product">
+          <div class="product-image">
+            <img [src]="c.image" width="100px">
+          </div>
+        </div>
+        <br>
+        <div>
+          <br>
+          Item Type : {{c.itemname}}
+          <br>
+          <div class="product-price">
+            Price : ₹{{c.amount}}
+          </div>
+          <br>
+          <div class="product-quantity">
+            Quantity :- {{c.quantity}}
+          </div>
+        </div>
+        <br>
+      </div>
+
+
+    </ion-item>
+  </div> -->
+</ion-content>

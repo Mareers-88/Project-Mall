@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>stock</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+<form   [formGroup]="stockform">
+
+  <ion-list>
+    <ion-item>
+    <ion-select placeholder="Select an item" formControlName="itemname" (ionChange)="view()">
+<!-- <ion-select-option>---Select an Item---</ion-select-option>           -->
+      <ion-select-option *ngFor="let i of item" value="{{i.itemname}}">{{i.itemname}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  </ion-list>
+ 
+
+ 
+  <ion-item>
+    <ion-label position="floating">Quantity</ion-label>
+    <ion-input type="text" formControlName="quantity" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Amount</ion-label>
+    <ion-input type="text" formControlName="amount"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="stockupdate() " color="warning"  fill="outline">CONFIRM
+  </ion-button>
+</form>
+</ion-card>
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title></ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <ion-item *ngFor="let c of shopdata">
+      <div>
+        <div>
+          Item name : {{c.itemname}}
+        </div>
+        <br>
+        <div>
+          amount : {{c.amount}}
+        </div>
+
+        <br>
+        <div>
+          <img [src] ="c.image" width="300px">
+        </div>
+        <form [formGroup]="quantityform">
+          Quantity : <ion-input type="number" min="1" formControlName="quantity" (ionChange)="quantity()" placeholder="Enter quantity"></ion-input>
+          </form>
+        
+        <div>
+          <!-- <ion-buttons slot="secondary">
+            <ion-button fill="outline" color="success" [disabled]="this.quan<=0" (click)="cart(c)">ADD TO CART</ion-button>
+          </ion-buttons> -->
+
+          <ion-button fill="clear" class="add-to-cart" [ngClass]="status ? 'added' : ''" (click)="cart(c)" [disabled]="this.quan<=0
+          
+          ">
+            <div class="default"  >Add to cart</div>
+            <div class="success">Added</div>
+            <div class="cart">
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="dots"></div>
+        </ion-button>
+
+       
+        </div>
+        <br>
+      </div>
+    </ion-item>
+    
+  </ion-card>
+
+</ion-content>

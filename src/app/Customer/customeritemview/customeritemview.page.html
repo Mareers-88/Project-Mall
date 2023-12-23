@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <!-- <ion-title>ITEMS</ion-title> -->
+
+    <ion-list>
+      <ion-item >
+        <ion-select interface="popover"  (ionChange)="this.filter($event)" placeholder="Filter" slot="end">
+          <ion-select-option [value]="1" >ALL</ion-select-option>
+          <ion-select-option  [value]="2">AVAILABLE</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-item  *ngFor="let c of filtered " >
+
+    <ion-card color="medium">
+
+      <ion-item-divider>
+      <div>
+        <br>
+       
+
+        <div>
+          Item name : {{c.itemname}}
+
+         </div>
+         <div>
+          Date : {{c.date}}
+
+         </div>
+       
+        <!-- <div>
+          quantity : {{c.quantity}}
+
+         </div> -->
+  
+        
+        <div>
+          amount :- {{c.amount}}
+        </div>
+        <br>
+        <div>
+          <img [src] ="c.image" width="250px" height="200px" [routerLink]= "['/Customer/customeritemviewmore',c.collection_stockId]">
+        </div>
+        
+        <br>
+        <div>
+          <!-- <ion-ripple-effect class="custom-ripple"></ion-ripple-effect> -->
+          <ion-button color="danger"   disabled slot="end" *ngIf="c.quantity<=0">OUT OF STOCK</ion-button>   
+          <ion-button class="custom-btn btn-3"   fill="clear" slot="end" *ngIf="c.quantity>0" [routerLink]= "['/Customer/customeritemviewmore',c.itemname]"><span>View More</span></ion-button>
+      <!-- <ion-button color="tertiary" slot="primary" *ngIf="c.quantity>0" [routerLink]= "['/Customer/customeritemviewmore',c.itemname]">View More</ion-button>    -->
+        </div>
+
+      </div>
+       
+    </ion-item-divider>
+    </ion-card>
+  </ion-item>
+
+</ion-content>

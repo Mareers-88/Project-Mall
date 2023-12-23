@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>stockview</ion-title>
+      <ion-button slot="end" class="bn11" [routerLink]="['/Shop/stock']" fill="clear">ADD</ion-button>
+
+<!-- 
+    <ion-buttons slot="end" (click)="GotoNotityPage()">
+      <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      <ion-badge color="danger" style="position: absolute; right: -5px; top: -3px;">3</ion-badge></ion-buttons> -->
+
+
+  </ion-toolbar>
+
+
+</ion-header>
+<ion-content>
+
+  <!-- <div>
+    <ion-button id="notification-button" ion-button clear slot="end">
+        <ion-icon name="notifications">
+          <ion-badge id="notifications-badge" color="danger">5</ion-badge>
+        </ion-icon>              
+    </ion-button>
+</div> -->
+
+
+  <ion-card>
+
+    <ion-card-content>
+
+      <ion-item *ngFor="let s of stockdata">
+        <div>
+          <ion-card-content>
+
+            <div>
+              Date :- {{s.date}}
+            </div>
+
+
+
+            <div>
+              Item name :- {{s.itemname}}
+            </div>
+
+            <div>
+              Quantity :- {{s.quantity}}
+            </div>
+
+            <div>
+              Amount :- {{s.amount}}
+            </div>
+
+            <ion-button color="danger"   disabled slot="end" *ngIf="s.quantity<=0">OUT OF STOCK</ion-button>   
+            <ion-button color="warning"   disabled slot="end" *ngIf="s.quantity > 0 && s.quantity<500">Stock running out !!!!</ion-button>   
+
+          </ion-card-content>
+        </div>
+        <!-- [routerLink]= "['/Shop/stock']" -->
+
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

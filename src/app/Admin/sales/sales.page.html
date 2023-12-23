@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>SHOPS AND SALES</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+    <ion-select placeholder="Select a shop" [(ngModel)]="this.shopName" (ionChange)="shopadmin()">
+      <ion-select-option *ngFor="let i of shopdata" value="{{i.shopname}}">{{i.shopname}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+    <ion-select placeholder="Select a category" [(ngModel)]="this.itemName" (ionChange)="itemChange()">
+      <ion-select-option *ngFor="let i of itemdata" value="{{i.itemname}}">{{i.itemname}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  </ion-list>
+
+<ion-card>
+  <div>
+    <b>Total number of items sold: {{this.totalQuantity}}</b>
+  </div>
+  <br>
+  <div>
+    <b>Total sales amount: {{this.totalAmount}}</b>
+  </div>
+</ion-card>
+
+
+
+  <ion-card>
+
+  <ion-item *ngFor="let s of data ">
+    <div>
+      <img [src]="s.image" width="300px" height="200px">
+    </div>
+<ion-card-content>
+      <div>
+        {{s.itemname}}
+      </div>
+      <div>
+       Quantity : {{s.quantity}}
+      </div>
+      <div>
+        Amount    : {{s.amount}}
+      </div>
+
+      
+
+    </ion-card-content>
+  </ion-item>
+</ion-card>
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 [routerLink]="['/Admin/customerreport']">
+          <ion-card text-center padding>
+            <ion-icon name="person"></ion-icon>
+            <h2>Customer </h2>
+          </ion-card>
+        </ion-col>
+        <ion-col col-6  [routerLink]="['/Admin/sales']">
+          <ion-card text-center padding>
+            <ion-icon name="timer-outline"></ion-icon>
+            <h2>Sales </h2>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6 [routerLink]="['/Admin/customershopping']">
+          <ion-card text-center padding>
+            <ion-icon name="albums-outline"></ion-icon>
+            <h2>Purchase History</h2>
+          </ion-card>
+        </ion-col>
+        <!-- <ion-col col-6 [routerLink]="['/Admin/itemreport']">
+          <ion-card text-center padding>
+            <ion-icon name="list"></ion-icon>
+            <h2>Items</h2>
+          </ion-card>
+        </ion-col> -->
+      </ion-row>
+  
+    </ion-grid>
+  </ion-content>
+
+
+  <!-- <ion-icon name="cloud-download-outline" ></ion-icon>
+<ion-button>REPORT 2</ion-button>
+<ion-button >REPORT 3</ion-button> -->
+
+
+<!-- </ion-content> -->

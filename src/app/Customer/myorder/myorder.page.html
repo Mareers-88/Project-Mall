@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>myorder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let c of bm;">
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="title">
+    
+    </div>
+    <ion-card _ngcontent-urm-c143="" color="light" ng-reflect-color="light"
+      class="ion-color ion-color-light md hydrated" style="width: 342px;">
+      <ion-card-header _ngcontent-urm-c143="" class="ion-inherit-color md hydrated"><ion-card-title
+          _ngcontent-urm-c143="" role="heading" aria-level="2" class="ion-inherit-color md hydrated">
+          Date :{{c.date}}</ion-card-title><ion-card-subtitle _ngcontent-urm-c143="" role="heading" aria-level="3"
+          class="ion-inherit-color md hydrated">
+          Amount : ₹{{c.totalamount}}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content _ngcontent-urm-c143="" class="md card-content-md hydrated">
+        Address : {{c.deliveryaddress}}
+        <br> <br>
+        Status : {{c.bookingstatus}}
+        <br>
+        <ion-button color="tertiary" slot="primary"
+          [routerLink]="['/Customer/myorderview',c.collection_bookingmasterId]">View More</ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+  </ion-item>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>itemedit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="update()" [formGroup]='itemeditform'>
+
+    <ion-item>
+    <ion-label position="floating">Category name</ion-label>
+    <ion-input type="text" placeholder="Enter Shop name" formControlName="categoryname"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+     <ion-label position="floating">Item name</ion-label>
+     <ion-input type="text" placeholder="Enter name of the owner" formControlName="itemname"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-input type="text" placeholder="Enter the Emailid" formControlName="description"></ion-input>
+    </ion-item>
+
+    <ion-item *ngFor="let c of itemdata;">
+       Image :<br>
+      <div>
+        <img [src] ="c.image" width="100px">
+      </div>
+  <ion-input type="file" formControlName="image " (change)="handlefile($event)"></ion-input>
+    </ion-item>
+
+
+        
+    <ion-button (click)="update()" [routerLink]= "['/Admin/item/itemview']">CONFIRM
+      <ion-icon name="finger-print-outline"></ion-icon>
+      </ion-button>
+      
+      </form>
+
+</ion-content>

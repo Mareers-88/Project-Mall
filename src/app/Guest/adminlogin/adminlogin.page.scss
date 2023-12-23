@@ -1,0 +1,53 @@
+
+// Main Colors
+$accent: null;
+$white: #ffffff;
+$black: #000000;
+$dark-gray: lighten($black, 20%);
+$gray: lighten($black, 40%);
+$light-gray: lighten($black, 60%);
+$lighter-gray: lighten($black, 80%);
+
+// Pen Settings
+$accent: #33b5e5;
+$module-width: 320px;
+
+.login-container {
+    
+    padding: 70px 60px;
+}
+/* Form Module */
+.k-module {
+  position: relative;
+//   background: $white;
+  max-width: $module-width;
+  width: 100%;
+  border-top: 5px solid $accent;
+  box-shadow: 0 0 3px rgba($black, .1);
+  margin: 0 auto;
+}
+  .x {
+    display: none;
+    padding: 40px;
+    &:nth-child(2) {
+      display: block;
+    }
+}
+  h2 {
+    margin: 0 0 20px;
+    color: $accent;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  ion-input {
+    outline: none;
+    width: 100%;
+    border: 1px solid darken($white, 15%);
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    font-weight: 400;
+   
+  }
+
+

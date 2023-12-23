@@ -1,0 +1,137 @@
+
+
+:root {
+	--card-height: 200px;
+	--card-width: calc(var(--card-height) / 1.5);
+}
+* {
+	box-sizing: border-box;
+}
+body {
+
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	// align-items: center;
+	// background: #191c29;
+}
+
+.text {
+width: max-content;
+}
+
+.card {
+	border: 1px solid #ddd;
+
+	align-items: center;
+	width: var(--card-width);
+	height: var(--card-height);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0px;
+	perspective: 2500px;
+	margin: 0 ;
+	&:hover {
+		.wrapper {
+			transform: perspective(700px) translateY(-5%) rotateX(25deg) translateZ(0);
+			box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+			-webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+			-moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+			&::after {
+				height: 100px;
+			}
+		}
+		// .title {
+		// 	transform: translate3d(0%, -50px, 100px);
+		// }
+		.character {
+			opacity: 1;
+			transform: translate3d(0%, -40%, 30px);
+		}
+	}
+}
+.cover-image {
+	width: 100%;
+	height: 60%;
+	object-fit: cover;
+}
+.wrapper {
+	transition: all 0.5s;
+	position: absolute;
+	width: 100%;
+
+	z-index: -1;
+	&::before {
+		top: 0;
+		height: 50%;
+		background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+	}
+	&::after {
+		bottom: 0;
+		opacity: 1;
+		background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+	}
+}
+.wrapper::before,
+.wrapper::after {
+	content: "";
+	opacity: 0;
+	width: 100px;
+	height: 50px;
+	transition: all 0.5s;
+	position: absolute;
+	left: 0;
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+
+.title {
+  width: 80%;
+  transition: transform 0.4s;
+}
+
+.character {
+	width: 45x;
+	opacity: 0;
+	transition: all .4s	;																																																																																																																				
+	// position: absolute;
+	z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -5%, 20px);
+}
+
+ion-toolbar {
+	--color: white;
+  
+	--border-color: #f1c916;
+	--border-width: 4px 0;
+	--border-style: double;
+  
+	// --min-height: 80px;
+	// --padding-top: 20px;
+	// --padding-bottom: 20px;
+  }

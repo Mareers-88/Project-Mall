@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+   
+   
+
+
+<div class="login-container">
+<div class="module k-module">
+  <div class="toggle">
+  </div>
+  <div class="x">
+    <h2>Login to your account</h2>
+    <form (ngSubmit)="submit()" class="signup-page" [formGroup]='adminloginform'>
+      <ion-input type="text" formControlName="username" placeholder="username" required ></ion-input>
+      <ion-input type="password"  formControlName="password" placeholder="password" required ></ion-input>
+      <ion-button type="submit" expand="full" >Log In</ion-button>
+    </form>
+  </div>
+
+</div>
+</div>
+</ion-content>
+

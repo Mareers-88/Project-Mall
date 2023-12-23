@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Purchase History</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor=" let s of data">
+
+    <ion-card-header>
+      <ion-card-title>Customer name</ion-card-title>
+      <ion-card-subtitle>{{s.customer}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content *ngFor=" let k of s.history">
+      <div>
+        Amount :-{{k.amount}}
+      </div>
+      <div>
+        Address :-{{k.address}}
+      </div>
+
+      <div>
+        Date :-{{k.date}}
+      </div>
+
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

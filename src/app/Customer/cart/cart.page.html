@@ -1,0 +1,112 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>cart</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <h1>Shopping Cart</h1>
+
+
+  <!-- <ion-fab slot="fixed" vertical="top" horizontal="end" >
+    <ion-fab-button color="tertiary">
+      <ion-icon  size="large" name="chevron-back-outline" (click)="sentToPrevious()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+  <div class="shopping-cart">
+    <div class="product">
+      <ion-item *ngFor="let c of cartdata">
+        <div class="product-image">
+          <img [src]="c.image">
+        </div>
+        <div class="product-details">
+          <div class="product-title">{{c.itemname}}</div>
+        </div>
+        <!-- <div class="product-price"></div> -->
+        <div class="product-quantity">
+          <input type="number" value="{{c.quantity}}" min="1">
+        </div>
+        <div class="product-line-price">{{c.amountT}}</div>
+
+        <div class="product-removal">
+          <ion-button size="small" color="danger" class="remove-product" (click)="deleteitemfromcart(c.collection_cartId)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </div>
+
+      </ion-item>
+    </div>
+  </div>
+
+
+  <div class="totals">
+
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total">{{totalamount}}</div>
+
+
+
+
+    </div>
+
+
+
+  </div>
+  <div>
+    <ion-button class="checkout" fill="clear" slot="end" (click)="this.navigate()"> CHECKOUT</ion-button>
+  </div>
+</ion-content>
+<!-- <form >
+  <div *ngFor="let c of cartdata">
+
+
+    <ion-fab slot="fixed" vertical="top" horizontal="end">
+      <ion-fab-button [routerLink]="['/Customer/customeritemview',c.collection_customerId]">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+ 
+      <ion-card>
+
+        <ion-card-content>
+          <ion-card-header>
+            <ion-card-title> {{c.itemname}}</ion-card-title>
+
+          </ion-card-header>
+
+
+
+          <ion-card-content>
+            {{c.quantity}}
+          </ion-card-content>
+
+          <ion-card-content>
+            {{c.amountT}}
+          </ion-card-content>
+
+
+
+          <ion-card-content>
+            {{totalamount}}
+          </ion-card-content>
+
+
+        </ion-card-content>
+
+
+      </ion-card>
+
+   
+
+  </div>
+  <ion-button class="btn" (click)="this.navigate()" slot="end" > CHECKOUT</ion-button>
+
+</form> -->

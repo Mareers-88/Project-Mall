@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="snow"></div>
+  <div class="snow"></div>
+  <div class="snow"></div>
+  <div class="snow"></div>
+  <div class="snow"></div>
+  <div class="snow"></div>
+  <div class="snow"></div>
+
+
+ 
+  <br>
+  <div class="wrapper">
+
+    
+    <!-- <div class="box"> -->
+    <img src="https://image.freepik.com/free-icon/refresh_318-33117.jpg" alt="lock" />
+    <h3>Please sign in</h3>
+    <form (ngSubmit)="OnSubmit()" [formGroup]='customeregistartionform'>
+      <ion-input type="text" placeholder="Enter your Name" formControlName="customername"></ion-input>
+      <ion-input type="email" placeholder="Email Address" formControlName="email"></ion-input>
+      <ion-input type="text" placeholder="username" formControlName="username"></ion-input>
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      <ion-input type="number" placeholder="Aadhar number" formControlName="Aadhar"></ion-input>
+      <ion-input type="text" placeholder="Address" formControlName="place"></ion-input>
+      <ion-input type="number" placeholder="Contact number" formControlName="contactno"></ion-input>
+    </form>
+    <div class="enter">
+      <ion-button type="submit" (click)="OnSubmit()">SUBMIT</ion-button>
+    </div>
+    <div class="signup">
+      <p>already a member ? <a [routerLink]="['/Guest/signin']">sign in</a></p>
+    </div>
+  </div>
+</ion-content>
+
+
+
+<!-- <form (ngSubmit)="OnSubmit()" [formGroup]='customeregistartionform'>
+
+				<ion-input type="text" placeholder="Enter your Name" formControlName="customername"></ion-input>
+				<ion-input type="email" placeholder="Email Address" formControlName="email"></ion-input>
+				<ion-input type="text" placeholder="username" formControlName="username"></ion-input>
+				<ion-input type="password" placeholder="Password"  formControlName="password"></ion-input>
+				<ion-input type="number" placeholder="Aadhar number" formControlName="Aadhar"></ion-input>
+				<ion-input type="text" placeholder="Address" formControlName="place"></ion-input>
+				<ion-input type="number" placeholder="Contact number" formControlName="contactno"></ion-input>
+
+        <ion-button (click)="OnSubmit()" color="danger">CONFIRM
+          <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+        </ion-button>
+
+			
+			</form> -->

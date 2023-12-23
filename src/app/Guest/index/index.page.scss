@@ -1,0 +1,220 @@
+* ::-webkit-scrollbar {
+  display: none;
+}
+ion-toolbar {
+	--background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0.8715861344537815) 0%,
+		rgba(0, 0, 0, 0.8463760504201681) 57%,
+		rgba(0, 0, 0, 0.6923144257703081) 80%,
+		rgba(0, 0, 0, 0.5438550420168067) 89%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+
+ion-tab-bar {
+  bottom: 20px;
+  border-radius: 16px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+ion-tab-button {
+
+  --color: var(--ion-color-medium);
+  --color-selected: var(--ion-color-primary);
+
+  // &::before {
+  //   background-color: transparent;
+  //   display: block;
+  //   content: "";
+  //   margin: 0 auto;
+  //   width: 20px;
+  //   height: 2px;
+  // }
+
+  // &.tab-selected::before {
+  //   background-color: var(--ion-color-primary);
+  // }
+}
+
+
+
+
+
+
+
+
+//BELOW
+.logo{
+  margin-left: 14px;
+  width: 50px;
+}
+
+.spotlight{
+width: 100%;
+height:50vh;
+background-image: url('https://www.worldatlas.com/r/w960-q80/upload/11/12/d7/interior-of-del-amo-fashion-center.jpeg');
+// background-image: url('assets/img/customer.png');
+background-position:center;
+background-size: cover;
+margin-bottom: 20px;
+position: relative;
+.gradient{
+  background: linear-gradient(#ffffff00 56%,#000000c2,#000 110%);
+  width: 100%;
+  height: 100%;
+}
+.info{
+		width: 100%;
+		position: absolute;
+		bottom: 10px;
+		text-align: center;
+    ion-img {
+			max-width: 50%;
+      height: 60vh;
+      width: auto;
+      // padding-top: 20px;
+      margin: auto;
+      display: block;
+
+
+		}
+
+}
+}
+
+
+
+
+// Color
+$brown: #2b2520;
+$green: #39dbc2;
+$pink: #f41fbf;
+$yellow: #ffed28;
+$purple: #b028ff;
+$blue: #49A7FF;
+$red: #ff3838;
+$orange: #db7953;
+
+
+
+//
+body {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+
+
+
+//cola 
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.pos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // min-height: 100vh;
+}
+//bg card
+.card2{
+  position: relative;
+  width: 600px;
+  height: 300px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+.card2 .circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.card2 .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #d83133;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+.card2:hover .circle::before{
+  background: #0065c3;
+  clip-path: circle(400px at center);
+}
+.card2 img{
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 300px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.card2:hover img{
+  left: 78%;
+  height: 400px;
+}
+.card2 .content{
+  position: relative;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.card2:hover .content{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+.card2 .content h2{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.card2 .content h3{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.card2 .content p{
+  color: #fff;
+}
+.card2 .content ion-button{
+  position: relative;
+  // color: #fff;
+  // padding: 10px 20px;
+  // border-radius: 10px;
+  background: #fff;
+  color: #111;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+
+
+
+

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CUSTOMER REPORT</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div class="product-card-container">
+
+      <ion-list>
+        <ion-item *ngFor="let s of Customerdetails ">
+          <ion-card-content>
+            <div>
+              Customer name : {{s.customername}}
+            </div>
+
+            <div>
+              Email : {{s.email}}
+            </div>
+
+            <div>
+              Contact Number : {{s.contactno}}
+            </div>
+
+            <div>
+              Username : {{s.username}}
+            </div>
+        
+            <div>
+              Place : {{s.place}}
+            </div>
+        
+            <div>
+              Aadhar number : {{s.Aadhar}}
+            </div>
+<!-- 
+            <ion-button color="tertiary" slot="primary"
+            [routerLink]="['/Customer/customerreportviewmore',s.collection_customerId]">View More</ion-button> -->
+
+          </ion-card-content>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </ion-card>
+</ion-content>

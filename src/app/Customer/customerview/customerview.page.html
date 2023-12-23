@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>customerview</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let s of shopdata">
+    <div>
+      <ion-card-content>
+
+    <div>
+      Shop Name :- {{s.shopname}}
+    </div>
+
+    <div>
+      Owner Name :- {{s.ownername}}
+      <ion-icon name="person-outline"></ion-icon>
+
+    </div>
+    
+    <div>
+     Email id :- {{s.email}}
+    </div>
+
+    <div>
+      License number :- {{s.licenseno}}
+    </div>
+
+    <div>
+      Password :- {{s.password}}
+    </div>
+
+    <div>
+      Place :- {{s.place}}
+    </div>
+
+    <div>
+      Contact Number :- {{s.contactno}}
+    </div>
+      </ion-card-content>
+  </div>
+
+    <div>
+      <img [src] ="s.image" width="300px">
+    </div>
+
+ 
+
+  <div> 
+    <ion-button class="primary" [routerLink]= "['/Admin/shopedit/',s.collection_shopId]">Edit</ion-button>
+    </div>
+    
+
+    <div> 
+      <!-- <ion-item>
+        <ion-button (click)="delete(s.collection_shopId)" class="btn btn-danger">Delete</ion-button>
+      </ion-item> -->
+    </div>
+ 
+  </ion-item>
+</ion-content>

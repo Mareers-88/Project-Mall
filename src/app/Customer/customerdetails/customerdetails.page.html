@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons fill="clear" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>PROFILE</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <nav class="x-menu">
+    <div class="wrapper"></div>
+    <ul class="menu">
+
+      <ion-card>
+        <ion-item *ngFor="let c of profile">
+
+          <!-- <ion-item-divider> -->
+          <div class="siz">
+            <br>
+            Name : {{c.customername}}
+            <br>
+            <br>
+            Username : {{c.username}}
+            <br>
+            <br>
+            Email : {{c.email}}
+            <br>
+            <br>
+            password : {{c.password}}
+            <br>
+            <br>
+            Aadhar Number : {{c.Aadhar}}
+            <br>
+            <br>
+            Place : {{c.place}}
+            <br>
+            <br>
+            Contact Number : {{c.contactno}}
+            <br>
+            <br>
+
+            <div id="container">
+              <ion-button color="translucent" class="learn-more"  [routerLink]= "['/Customer/customerdetailsedit', c.collection_customerId]">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Edit Details</span>
+              </ion-button>
+            </div>
+          </div>
+
+          <!-- <ion-button color="secondary" [routerLink]= "['/Customer/customerdetailsedit', c.collection_customerId]">Edit</ion-button>    -->
+          <!-- </ion-item-divider> -->
+        </ion-item>
+      </ion-card>
+
+    </ul>
+  </nav>
+  <!-- <button class="run">Run Animation</button> -->
+
+</ion-content>

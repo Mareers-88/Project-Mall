@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>items</ion-title>
+    <ion-button  color="warning" shape="round" size="large" [routerLink]="['/Admin/item/registration']" slot="end" ><ion-icon name="add"></ion-icon></ion-button>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar debounce="500" [(ngModel)]="term"  class="custom"></ion-searchbar>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+    <ion-fab-button>
+      <ion-icon name="add"  [routerLink]="['/Admin/item/registration']"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+  <ion-card>
+    <div class="product-card-container">
+
+      <div class="product-card">
+
+        <ion-list>
+          <ion-item *ngFor="let s of itemdata | filter:term">
+            <ion-card-content>
+              <div>
+                Category name : {{s.categoryname}}
+              </div>
+
+              <div>
+                Item name  : {{s.itemname}}
+              </div>
+
+              <div>
+                Description    : {{s.description}}
+              </div>
+
+              <div>
+                <img [src]="s.image" width="300px" height="200px">
+              </div>
+
+              <div>
+                <ion-button color="success" expand="block"
+                  [routerLink]="['/Admin/item/itemedit/',s.collection_itemId]">Edit</ion-button>
+              </div>
+              <div>
+
+                <ion-button color="danger" expand="block" (click)="delete(s.collection_itemId)">Delete</ion-button>
+
+              </div>
+            </ion-card-content>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>
+
+
+<!-- <div class="product-card-container">
+  <div class="product-card">
+    <img src="https://i.ibb.co/xLY58b3/oranges-gd8631c4b3-640.png" alt="">
+    <div class="product-card__body">
+      <span class="tag">
+        <p>Disponible</p>
+      </span>
+      <h1>Fresh Orange</h1>
+      <span class="discount">
+        1 TND
+      </span>
+      <span class="price">50TND</span>
+      <p class="description">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto maiores quibusdam repellendus, rem quas maxime cum tempora quis aut incidunt culpa reprehenderit aspernatur eos, veritatis corrupti illum cupiditate deserunt? Quae.
+      </p>
+      <button class="btn">
+        Add to cart
+      </button>
+
+    </div>
+  </div>
+</div> -->

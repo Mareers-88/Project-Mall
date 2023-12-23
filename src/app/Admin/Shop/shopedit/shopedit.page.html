@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>shopedit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="update()" [formGroup]='shopeditform'>
+
+    <ion-item>
+    <ion-label position="floating">Shop name</ion-label>
+    <ion-input type="text" placeholder="Enter Shop name" formControlName="shopname"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+     <ion-label position="floating">Owner name</ion-label>
+     <ion-input type="text" placeholder="Enter name of the owner" formControlName="ownername"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" placeholder="Enter the Emailid" formControlName="email"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+       <ion-label position="floating">License number</ion-label>
+       <ion-input type="text" placeholder="Enter the License number" formControlName="licenceno"></ion-input>
+    </ion-item>
+    
+     <ion-item>
+     <ion-label position="floating">Password</ion-label>
+     <ion-input type="text" placeholder="Enter a password" formControlName="password"></ion-input>
+     </ion-item>
+    
+     <ion-item *ngFor="let c of shopdata;">
+      Image :<br>
+     <div>
+       <img [src] ="c.image" width="100px">
+     </div>
+ <ion-input type="file" id="name" (change)="handlefile($event)"></ion-input>
+ <br>
+ 
+   </ion-item>   
+   
+   <ion-item> 
+    <ion-input type="file" id="name2" (change)="handlefile2($event)">
+    </ion-input>
+    </ion-item>
+    
+    
+    <ion-item>
+      <ion-label position="floating">place</ion-label>
+      <ion-input type="text" placeholder="Enter the current place" formControlName="place"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">contact number</ion-label>
+      <ion-input type="number" placeholder="Enter the contact number" formControlName="contactno"></ion-input>
+    </ion-item>
+    
+    
+    <ion-button (click)="update()" [routerLink]= "['/Admin/shopview']">CONFIRM
+    <ion-icon name="finger-print-outline"></ion-icon>
+    </ion-button>
+    
+    </form>
+
+</ion-content>

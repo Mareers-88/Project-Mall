@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>customerreportviewmore</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="l-container" *ngFor="let s of details;">
+  
+    <div>
+      Customer name : {{s.customername}}
+    </div>
+
+    <div>
+      Email : {{s.email}}
+    </div>
+
+    <div>
+      Contact Number : {{s.contactno}}
+    </div>
+
+    <div>
+      Username : {{s.username}}
+    </div>
+
+    <div>
+      Place : {{s.place}}
+    </div>
+
+    <div>
+      Aadhar number : {{s.Aadhar}}
+    </div>
+  </div>
+</ion-content>

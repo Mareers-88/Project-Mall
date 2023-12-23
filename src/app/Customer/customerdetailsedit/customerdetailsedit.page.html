@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>PROFILE EDIT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="update()" [formGroup]='customerdetailsedit'>
+    <ion-item >
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" formControlName="customername" required></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username" required></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" formControlName="email" required></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Aadhar number</ion-label>
+      <ion-input type="text" formControlName="Aadhar" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">place</ion-label>
+      <ion-input type="text" formControlName="place" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">password</ion-label>
+      <ion-input type="text" formControlName="password" required></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Contact number</ion-label>
+      <ion-input type="text" formControlName="contactno" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Update</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
